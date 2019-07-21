@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "es.niux.efc.bledemo"
+        minSdkVersion 18
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+    buildTypes {
+        debug {
+            applicationIdSuffix '.debug'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$depKotlin"
+    implementation project(':core')
+    implementation project(':bluetooth')
+
+    testImplementation "junit:junit:$depTestJUnit"
+    androidTestImplementation "androidx.test:runner:$depTestAndroidxRunner"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$depTestAndroidxExpresso"
+
+    implementation "com.jakewharton.timber:timber:$depTestTimber"
+
+    implementation "com.google.dagger:dagger:$depInjectDagger"
+    kapt "com.google.dagger:dagger-compiler:$depInjectDagger"
+    implementation "com.google.dagger:dagger-android:$depInjectDagger"
+    implementation "com.google.dagger:dagger-android-support:$depInjectDagger"
+    kapt "com.google.dagger:dagger-android-processor:$depInjectDagger"
+
+    compileOnly "com.squareup.inject:assisted-inject-annotations-dagger2:$depInjectAssisted"
+    kapt "com.squareup.inject:assisted-inject-processor-dagger2:$depInjectAssisted"
+
+    implementation "io.reactivex.rxjava2:rxjava:$depRxJava"
+    implementation "io.reactivex.rxjava2:rxandroid:$depRxAndroid"
+
+    implementation "androidx.appcompat:appcompat:$depAndroidxAppCompat"
+    implementation "androidx.core:core-ktx:$depAndroidxKtxCore"
+    implementation "androidx.activity:activity-ktx:$depAndroidxKtxActivity"
+    implementation "androidx.fragment:fragment-ktx:$depAndroidxKtxFragment"
+
+    implementation "androidx.lifecycle:lifecycle-extensions:$depAndroidxLifecycle"
+    kapt "androidx.lifecycle:lifecycle-compiler:$depAndroidxLifecycle"
+    implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$depAndroidxLifecycle"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$depAndroidxLifecycleState"
+
+    implementation "androidx.navigation:navigation-fragment-ktx:$depAndroidxNavigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$depAndroidxNavigation"
+
+    implementation "com.google.android.material:material:$depLayoutGoogleMaterial"
+    implementation "androidx.constraintlayout:constraintlayout:$depLayoutAndroidxConstraintLayout"
+    implementation "androidx.recyclerview:recyclerview:$depLayoutAndroidxRecyclerView"
+    implementation "me.zhanghai.android.materialprogressbar:library:$depLayoutMaterialProgressBar"
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ng_main"
+    app:startDestination="@id/nd_main_state_fragment">
+
+    <fragment
+        android:id="@+id/nd_main_state_fragment"
+        android:name="es.niux.efc.bledemo.presentation.feature.main.state.MainStateFragment"
+        android:label="MainStateFragment"
+        tools:layout="@layout/main_state_fragment">
+
+        <action
+            android:id="@+id/na_main_state_devices"
+            app:destination="@id/nd_main_devices_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/ng_main" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nd_main_devices_fragment"
+        android:name="es.niux.efc.bledemo.presentation.feature.main.devices.MainDevicesFragment"
+        android:label="MainDevicesFragment"
+        tools:layout="@layout/main_devices_fragment">
+
+        <action
+            android:id="@+id/na_main_devices_device"
+            app:destination="@id/nd_main_device_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nd_main_device_fragment"
+        android:name="es.niux.efc.bledemo.presentation.feature.main.device.MainDeviceFragment"
+        android:label="MainDeviceFragment"
+        tools:layout="@layout/main_device_fragment">
+
+        <argument
+            android:name="bleDeviceAddress"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/na_main_global_state"
+        app:destination="@id/nd_main_state_fragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"
+        app:popUpTo="@+id/ng_main" />
+
+</navigation>

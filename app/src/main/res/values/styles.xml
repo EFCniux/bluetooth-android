@@ -1,0 +1,40 @@
+<resources>
+
+    <style name="Base.AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+    </style>
+
+    <style name="AppTheme" parent="Base.AppTheme" />
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <style name="Widget.AppTheme.ProgressBar.Horizontal" parent="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal">
+        <item name="mpb_progressStyle">horizontal</item>
+        <item name="mpb_setBothDrawables">true</item>
+    </style>
+
+    <style name="Widget.AppTheme.ProgressBar.Horizontal.NoPadding" parent="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal.NoPadding">
+        <item name="mpb_progressStyle">horizontal</item>
+        <item name="mpb_setBothDrawables">true</item>
+        <item name="mpb_useIntrinsicPadding">false</item>
+    </style>
+
+    <style name="Widget.AppTheme.ProgressBar.Horizontal.NoPadding.AppBar">
+        <item name="mpb_progressTint">@color/colorSecondary</item>
+        <item name="mpb_secondaryProgressTint">@color/colorSecondaryVariant</item>
+        <item name="mpb_indeterminateTint">@color/colorSecondary</item>
+    </style>
+
+</resources>

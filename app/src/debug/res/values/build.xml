@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Bluetooth LE Demo (Debug)</string>
+    <string name="app_name_leaks">Bluetooth LE Demo (Leaks)</string>
+</resources>

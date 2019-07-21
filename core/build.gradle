@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        minSdkVersion 18
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$depKotlin"
+
+    testImplementation "junit:junit:$depTestJUnit"
+    androidTestImplementation "androidx.test:runner:$depTestAndroidxRunner"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$depTestAndroidxExpresso"
+
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$depTestLeakCanary"
+    debugImplementation "com.squareup.leakcanary:leakcanary-support-fragment:$depTestLeakCanary"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$depTestLeakCanary"
+
+    implementation "com.google.dagger:dagger:$depInjectDagger"
+    implementation "com.google.dagger:dagger-android:$depInjectDagger"
+    implementation "com.google.dagger:dagger-android-support:$depInjectDagger"
+
+    implementation "io.reactivex.rxjava2:rxjava:$depRxJava"
+    implementation "io.reactivex.rxjava2:rxandroid:$depRxAndroid"
+
+    implementation "androidx.appcompat:appcompat:$depAndroidxAppCompat"
+    implementation "androidx.core:core-ktx:$depAndroidxKtxCore"
+
+    implementation "androidx.lifecycle:lifecycle-extensions:$depAndroidxLifecycle"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$depAndroidxLifecycleState"
+
+    implementation "androidx.navigation:navigation-fragment-ktx:$depAndroidxNavigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$depAndroidxNavigation"
+}

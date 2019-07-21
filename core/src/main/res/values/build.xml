@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public name="app_name_leaks" type="string" />
+    <string name="app_name_leaks">Leaks</string>
+    <string name="leak_canary_display_activity_label">@string/app_name_leaks</string>
+</resources>
